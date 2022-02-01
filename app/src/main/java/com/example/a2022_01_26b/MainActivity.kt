@@ -2,10 +2,12 @@ package com.example.a2022_01_26b
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.a2022_01_26b.controllers.NextQuestion
 import com.example.a2022_01_26b.model.AllQuestions
 
 class MainActivity : AppCompatActivity() {
@@ -13,11 +15,10 @@ class MainActivity : AppCompatActivity() {
     var trueButton: Button? = null
     var falseButton: Button? = null
     var nextButton: Button? = null
+    var doneButton: Button? = null
     var questionText: TextView? = null
 
-    var question: Int = 0
-    val allQestions: AllQuestions = AllQuestions()
-    val total_qs: Int = allQestions.allQuestions.size
+    val nextQuestion: NextQuestion = NextQuestion()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         trueButton = findViewById(R.id.true_button)
         falseButton = findViewById(R.id.false_button)
         nextButton = findViewById(R.id.next_button)
+        doneButton = findViewById(R.id.done_button)
 
         questionText = findViewById(R.id.questionTextView)
 
@@ -44,11 +46,16 @@ class MainActivity : AppCompatActivity() {
 
         nextButton?.setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View?) {
-                question = (question+1) % total_qs
-
-                questionText?.setText(allQestions.allQuestions[question].index)
+                val nextQuestionIndex = nextQuestion.linearNextQuestion()
+                questionText?.setText(nextQuestionIndex )
                 Toast.makeText(baseContext,"Clicked NEXT", Toast.LENGTH_SHORT).show()
 
+            }
+        })
+
+        doneButton?.setOnClickListener(object: View.OnClickListener{
+            override fun onClick(v: View?) {
+                Log.i("PGB","Done selected")
             }
         })
 
