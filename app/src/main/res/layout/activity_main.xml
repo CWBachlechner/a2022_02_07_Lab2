@@ -46,7 +46,7 @@
         android:layout_marginTop="80dp"
         android:text="Next Question"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/false_button" />
 
@@ -54,12 +54,23 @@
         android:id="@+id/done_button"
         android:layout_width="128dp"
         android:layout_height="75dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="36dp"
         android:text="Done"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/next_button" />
+
+    <TextView
+        android:id="@+id/to_score_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:hint="To Score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/done_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

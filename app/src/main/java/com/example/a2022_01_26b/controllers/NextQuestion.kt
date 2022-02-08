@@ -16,6 +16,10 @@ class NextQuestion {
         return allQestions.allQuestions[question].index
     }
 
+    public fun trueFalseOr(): Boolean {
+        return allQestions.allQuestions[question].isTrue
+    }
+
     public fun pseudoRandomNextQuestion(): Int {
         question = (question+1) % total_qs
         return allQestions.allQuestions[question].index

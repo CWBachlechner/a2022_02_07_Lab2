@@ -14,4 +14,8 @@ class Score {
         return score
     }
 
+    fun getScore(): Int {
+        return score
+    }
+
 }
